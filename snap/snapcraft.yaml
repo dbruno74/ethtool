@@ -1,0 +1,18 @@
+name: ethtool
+base: core24 # the base snap is the execution environment for this snap
+version: '0.1' # just for humans, typically '1.2+git' or '1.3.2'
+summary: An ethtool snap
+description: |
+  An ethtool snap
+grade: stable # must be 'stable' to release into candidate/stable channels
+confinement: devmode # use 'strict' once you have the right plugs and slots
+
+apps:
+  ethtool:
+    command: usr/sbin/ethtool
+
+parts:
+  ethtool:
+    # See 'snapcraft plugins'
+    plugin: nil
+    stage-packages: [ethtool]
